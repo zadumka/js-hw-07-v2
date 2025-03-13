@@ -2,7 +2,6 @@ var textInput = document.getElementById('name-input');
 var textOutput = document.getElementById('name-output');
 
 textInput.addEventListener('input', function() {
-      var trimmedValue = textInput.value.trim();
-      var userName = trimmedValue === '' ? 'Anonymous' : trimmedValue;
+      var userName = textInput.value === '' ? 'Anonymous' : textInput.value; // Помилка: відсутній trim()
       textOutput.textContent = userName;
 });
