@@ -4,19 +4,17 @@ function getRandomHexColor() {
     .padStart(6, 0)}`;
 }
 
-
 document.addEventListener("DOMContentLoaded", function () {
   var form = document.querySelector(".change-color");
   var span = document.querySelector(".color");
 
   form.addEventListener("click", function (event) {
-      event.preventDefault();
+    event.preventDefault();
 
-      var body = document.body;
-      let randomColor;
-      randomColor = getRandomHexColor();
-      body.style.backgroundColor = randomColor;
-
-      span.textContent = randomColor;    
+    var body = document.body;
+    
+    // Помилка: два окремих виклики функції getRandomHexColor()
+    body.style.backgroundColor = getRandomHexColor();
+    span.textContent = getRandomHexColor(); 
   });
 });
